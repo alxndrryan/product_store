@@ -14,20 +14,26 @@ const Navbar = () => {
         alignItems={'center'}
         justifyContent={'space-between'}
         flexDir={{
-          base: 'column',
-          sm: 'row'
+          sm: 'column',
+          md: 'row'
         }}
       >
-        <Text
-          fontSize={{ base: '22', sm: '28' }}
-          fontWeight={'bold'}
-          textTransform={'uppercase'}
-          textAlign={'center'}
-          bgGradient={'linear(to-r, cyan.400, blue.500)'}
-          bgClip={'text'}
-        >
-          <Link href={'/'}>Product Store 🛒</Link>
+        <Text>
+          <Link
+            href={'/'}
+            fontWeight={'bold'}
+            textTransform={'uppercase'}
+            textAlign={'center'}
+            bgGradient={'to-r'}
+            gradientFrom={'cyan.200'}
+            gradientTo={'blue.500'}
+            bgClip={'text'}
+            textStyle={{ sm: 'md', md: 'lg' }}
+          >
+            Product Store 🛒
+          </Link>
         </Text>
+
         <HStack spacing={2} alignItems={'center'}>
           <Link href={'/create'}>
             <Button>
