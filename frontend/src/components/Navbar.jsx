@@ -1,8 +1,10 @@
 import { Button, Container, Flex, HStack, Link, Text } from '@chakra-ui/react';
-import { useColorMode } from './ui/color-mode.jsx';
+
+import { useColorMode } from '../components/ui/color-mode';
 
 import { FaRegPlusSquare } from 'react-icons/fa';
-import { IoMoonOutline, IoSunnyOutline } from 'react-icons/io5';
+import { IoIosMoon } from 'react-icons/io';
+import { LuSun } from 'react-icons/lu';
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -36,12 +38,12 @@ const Navbar = () => {
 
         <HStack spacing={2} alignItems={'center'}>
           <Link href={'/create'}>
-            <Button>
-              <FaRegPlusSquare fontSize={20} />
+            <Button variant="outline">
+              <FaRegPlusSquare size={80} />
             </Button>
           </Link>
-          <Button onClick={toggleColorMode}>
-            {colorMode === 'light' ? <IoSunnyOutline /> : <IoMoonOutline />}
+          <Button variant="outline" onClick={toggleColorMode}>
+            {colorMode === 'light' ? <IoIosMoon /> : <LuSun size={100} />}
           </Button>
         </HStack>
       </Flex>
