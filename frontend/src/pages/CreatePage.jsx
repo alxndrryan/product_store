@@ -8,6 +8,7 @@ import {
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useColorModeValue } from '../components/ui/color-mode';
+import { Toaster, toaster } from '../components/ui/toaster';
 import { useProductStore } from '../store/product';
 
 const CreatePage = () => {
@@ -21,8 +22,22 @@ const CreatePage = () => {
 
   const handleAddProduct = async () => {
     const { success, message } = await createProduct(newProduct);
-    console.log('Success:', success);
-    console.log('Message:', message);
+
+    if (!success) {
+      toaster.create({
+        title: 'Error',
+        description: message,
+        status: 'error'
+      });
+      <Toaster />;
+    } else {
+      toaster.create({
+        title: 'Success',
+        description: message,
+        status: 'success'
+      });
+      <Toaster />;
+    }
   };
 
   return (
