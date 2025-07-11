@@ -1,4 +1,5 @@
-import { Container, Link, Text, VStack } from '@chakra-ui/react';
+import { Container, Text, VStack } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
